@@ -34,8 +34,51 @@ table{
 }
 		</style>
 		
-		<script src="js/jquery-2.1.0.min.js"></script>
-		<script src="js/javascript-maintain.js"></script>
+		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" >
+		
+		$(document).ready(function(){
+function center(){
+			var win_h=$(window).height();
+			var win_w=$(window).width();
+			
+			
+				document.getElementById("exe_code").style.height = ((win_h)-200)+"px" ;
+				document.getElementById("exe_code").style.width = ((win_w/2)-100)+"px" ;
+				
+				$("#exe_code").css('top',100);
+				$("#exe_code").css('left',30);
+				
+				document.getElementById("execution").style.height = ((win_h)-200)+"px" ;
+				document.getElementById("execution").style.width = ((win_w/2)-100)+"px" ;
+			
+				$("#execution").css('top',100);
+				$("#execution").css('left',30);
+				
+			
+		}
+center();					   
+		
+		$("#execute").click(function (){
+						   
+var code=document.getElementById("exe_code").value;
+var ifrm = document.getElementById('execution');
+ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
+ifrm.document.open();
+ifrm.document.write(code);
+ifrm.document.close();
+	});
+		
+		
+		
+		$(window).resize(function(){
+				center();		   
+						   });
+
+});
+	
+			
+		</script>
 	</head>
 <body>
 <div class="control_menue"><input type="button" id="execute" name="execute" alt="execute" value="Execute" class="execute_button" ></div>
