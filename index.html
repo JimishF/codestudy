@@ -1,0 +1,56 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Code execution</title>
+		<style>
+		iframe {
+  padding:10px;
+  	border:dashed;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px; 
+  border-radius: 12px; 
+
+-webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.5);
+-moz-box-shadow:    0px 0px 24px 0px rgba(0, 0, 0, 0.5);
+box-shadow:         0px 0px 24px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+textarea{
+border: 3px double #CCCCCC;
+resize:none;
+height:100px;
+width:100px;
+}
+.control_menue{
+height:50px;
+width:100%;
+background-color:#999999;
+
+}
+table{
+}
+		</style>
+		
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/javascript-maintain.js"></script>
+	</head>
+<body>
+<div class="control_menue"><input type="button" id="execute" name="execute" alt="execute" value="Execute" class="execute_button" ></div>
+<table cellspacing="30">
+<tbody>
+<tr>
+<td>
+
+	<textarea name="exe_code" id="exe_code" class="exe_code"></textarea>	
+	</td>
+	<td>	
+	<iframe id="execution" name="execution" scrolling="yes" title="execution"></iframe>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
