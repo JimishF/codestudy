@@ -35,10 +35,11 @@ table{
 		</style>
 		
 		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" >
+	<script type="text/javascript" >
 		
 		$(document).ready(function(){
 function center(){
+			$("#jqry").hide();
 			var win_h=$(window).height();
 			var win_w=$(window).width();
 			
@@ -63,6 +64,12 @@ center();
 						   
 var code=document.getElementById("exe_code").value;
 var ifrm = document.getElementById('execution');
+var jq = document.getElementById('jq');
+if(jq.checked)
+{
+code = document.getElementById("jqry").value + code ;
+
+}
 ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
 ifrm.document.open();
 ifrm.document.write(code);
@@ -81,7 +88,9 @@ ifrm.document.close();
 		</script>
 	</head>
 <body>
-<div class="control_menue"><input type="button" id="execute" name="execute" alt="execute" value="Execute" class="execute_button" ></div>
+<input type="text" id="jqry" value="<head><script type='text/javascript' src='./jquery-2.1.1.min.js'></script></head>"/>
+<div class="control_menue"><input type="button" id="execute" name="execute" alt="execute" value="Execute" class="execute_button" > <br />
+jQuery <input type="checkbox"  id="jq" /></div>
 <table cellspacing="30">
 <tbody>
 <tr>
