@@ -38,7 +38,8 @@ table{
 	<script type="text/javascript" >
 		
 		$(document).ready(function(){
-function center(){
+		
+		function center(){
 			$("#jqry").hide();
 			var win_h=$(window).height();
 			var win_w=$(window).width();
@@ -67,13 +68,13 @@ var ifrm = document.getElementById('execution');
 var jq = document.getElementById('jq');
 if(jq.checked)
 {
-code = document.getElementById("jqry").value + code ;
-
+	code = document.getElementById("jqry").value + code ;
 }
-ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
-ifrm.document.open();
-ifrm.document.write(code);
-ifrm.document.close();
+
+		ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
+		ifrm.document.open();
+		ifrm.document.write(code);
+		ifrm.document.close();
 	});
 		
 		
